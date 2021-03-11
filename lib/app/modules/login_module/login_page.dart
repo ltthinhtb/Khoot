@@ -11,78 +11,80 @@ class LoginPage extends GetWidget<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: HexColor("#38AE9C"),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: HexColor("#38AE9C"),
-            child: Column(
-              children: [
-                SizedBox(height: 159),
-                Container(
-                    margin: EdgeInsets.symmetric(horizontal: 70),
-                    child: Image.asset('assest/Login.png')),
-                SizedBox(height: 48),
-                GestureDetector(
-                  onTap: (){
-                    Get.to(HomePage());
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 25),
-                    decoration: BoxDecoration(
-                        color: HexColor("#F7DD83"),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 73),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              color: HexColor("#38AE9C"),
+              child: Column(
+                children: [
+                  SizedBox(height: 159),
+                  Container(
+                      margin: EdgeInsets.symmetric(horizontal: 70),
+                      child: Image.asset('assest/Login.png')),
+                  SizedBox(height: 48),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(HomePage());
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 25),
+                      decoration: BoxDecoration(
+                          color: HexColor("#F7DD83"),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 73),
+                      child: Text(
+                        "Go straight into a room?",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20),
                     child: Text(
-                      "Go straight into a room?",
+                      "OR",
                       style: GoogleFonts.montserrat(
                           fontSize: 14, fontWeight: FontWeight.w600),
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 20),
-                  child: Text(
-                    "OR",
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 26, vertical: 22),
+              color: Colors.white,
+              child: Column(
+                children: [
+                  textInput("Username", "assest/mail.png"),
+                  SizedBox(height: 20),
+                  textInput("Password", "assest/lock.png"),
+                  SizedBox(height: 20),
+                  button(context, "Sign In"),
+                  SizedBox(height: 10),
+                  Text(
+                    "Forgot your Password?",
                     style: GoogleFonts.montserrat(
-                        fontSize: 14, fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w300, fontSize: 14),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 26, vertical: 22),
-            color: Colors.white,
-            child: Column(
-              children: [
-                textInput("Username", "assest/mail.png"),
-                SizedBox(height: 20),
-                textInput("Password", "assest/lock.png"),
-                SizedBox(height: 20),
-                button(context, "Sign In"),
-                SizedBox(height: 10),
-                Text(
-                  "Forgot your Password?",
-                  style: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w300, fontSize: 14),
-                ),
-                SizedBox(height: 20),
-                Divider(indent: 1, color: Colors.grey),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Don’t have an account?",
-                    style: GoogleFonts.dmSans(
-                        fontWeight: FontWeight.w400, fontSize: 14),
+                  SizedBox(height: 20),
+                  Divider(indent: 1, color: Colors.grey),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Don’t have an account?",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 14),
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                button(context, "Sign Up"),
-              ],
-            ),
-          )
-        ],
+                  SizedBox(height: 10),
+                  button(context, "Sign Up"),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

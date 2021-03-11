@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:khoot/app/modules/entername_module/entername_page.dart';
-import 'package:khoot/app/modules/enterroom_module/enterroom_controller.dart';
+import 'package:khoot/app/modules/question_module/question_page.dart';
 import 'package:khoot/app/theme/HexColor.dart';
 
-class EnterRoomPage extends GetWidget<EnterRoomController> {
+import 'entername_controller.dart';
+
+class EnterNamePage extends GetWidget<EnterNameController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +34,10 @@ class EnterRoomPage extends GetWidget<EnterRoomController> {
                 child: Image.asset('assest/Login.png', height: 70),
               ),
               SizedBox(height: 61),
-              textInput("Enter Room ID"),
+              textInput("Enter your nickname"),
               SizedBox(height: 22),
               buttonPlay(context, "Go", "#F6E084", Colors.black, () {
-                Get.to(EnterNamePage());
+                Get.to(QuestionPage());
               })
             ],
           )
@@ -44,31 +45,31 @@ class EnterRoomPage extends GetWidget<EnterRoomController> {
       ),
     );
   }
+
   Widget textInput(String hintText) {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 41),
       decoration: BoxDecoration(
-        color: Colors.white,
-            borderRadius: BorderRadius.circular(10)
-      ),
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
       constraints: BoxConstraints(minHeight: 41),
       child: TextFormField(
         textAlign: TextAlign.center,
         maxLines: null,
         decoration: InputDecoration(
           border: InputBorder.none,
-            isDense: true,
-            hintText: hintText,
-            hintStyle: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w400, fontSize: 14),
-            disabledBorder: InputBorder.none,
+          isDense: true,
+          hintText: hintText,
+          hintStyle:
+              GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14),
+          disabledBorder: InputBorder.none,
         ),
       ),
     );
   }
 
-  Widget buttonPlay(BuildContext context,String title,String color,Color fontColor,VoidCallback voidCallback){
+  Widget buttonPlay(BuildContext context, String title, String color,
+      Color fontColor, VoidCallback voidCallback) {
     return GestureDetector(
       onTap: voidCallback,
       child: Container(
@@ -83,10 +84,9 @@ class EnterRoomPage extends GetWidget<EnterRoomController> {
         child: Text(
           title,
           style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w600, fontSize: 14,color: fontColor),
+              fontWeight: FontWeight.w600, fontSize: 14, color: fontColor),
         ),
       ),
     );
   }
-
 }

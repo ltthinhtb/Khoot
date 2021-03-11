@@ -24,6 +24,7 @@ dependencies:
   get: ^3.26.0
   google_fonts: ^1.1.2
   dotted_border: ^1.0.7
+  circular_countdown_timer: ^0.1.0
   flutter:
     sdk: flutter
 

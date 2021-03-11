@@ -1,3 +1,7 @@
+import '../../app/modules/question_module/question_page.dart';
+import '../../app/modules/question_module/question_bindings.dart';
+import '../../app/modules/entername_module/entername_page.dart';
+import '../../app/modules/entername_module/entername_bindings.dart';
 import '../../app/modules/enterroom_module/enterroom_page.dart';
 import '../../app/modules/enterroom_module/enterroom_bindings.dart';
 import '../../app/modules/home_module/home_page.dart';
@@ -24,6 +28,16 @@ abstract class AppPages {
       name: Routes.ENTERROOM,
       page: () => EnterRoomPage(),
       binding: EnterRoomBinding(),
+    ),
+    GetPage(
+      name: Routes.ENTERNAME,
+      page: () => EnterNamePage(),
+      binding: EnterNameBinding(),
+    ),
+    GetPage(
+      name: Routes.QUESTION,
+      page: () => QuestionPage(),
+      binding: QuestionBinding(),
     ),
   ];
 }
