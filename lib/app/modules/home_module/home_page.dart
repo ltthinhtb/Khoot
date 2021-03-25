@@ -18,14 +18,13 @@ class HomePage extends GetWidget<HomeController> {
               color: HexColor("#38AE9C"),
               child: Column(
                 children: [
-                  SizedBox(height: 54),
+                  SizedBox(height: 45),
                   Container(
                       margin: EdgeInsets.symmetric(horizontal: 116),
                       child: Image.asset(
                         'assest/Login.png',
                         height: 100,
                       )),
-                  SizedBox(height: 58),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 31),
                     child: Row(

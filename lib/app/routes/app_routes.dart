@@ -7,4 +7,5 @@ abstract class Routes {
   static const ENTERROOM = '/enterroom'; // EnterRoom page
   static const ENTERNAME = '/entername'; // EnterName page
   static const QUESTION = '/question'; // Question page
+  static const MAP = '/map'; // map page
 }

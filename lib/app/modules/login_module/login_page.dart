@@ -29,7 +29,7 @@ class LoginPage extends GetWidget<LoginController> {
                       Get.to(HomePage());
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 25),
+                      margin: EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                           color: HexColor("#F7DD83"),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
